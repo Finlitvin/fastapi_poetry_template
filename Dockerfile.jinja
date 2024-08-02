@@ -3,3 +3,25 @@ FROM python:{{python_version}}-slim-bullseye
 LABEL maintainer="{{service_author}}"
 LABEL description="{{service_title}}"
 LABEL version="{{service_version}}"
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV APP_PATH=/wu_scan_backend
+
+ARG SECRET_KEY
+
+WORKDIR $APP_PATH
+
+COPY poetry.lock pyproject.toml ./
+
+RUN python -m pip install --no-cache-dir poetry==1.8.3
+RUN poetry export --without-hashes --without dev,test -f requirements.txt -o requirements.txt
+
+COPY requirements.txt ./
+RUN python -m pip install --no-cache-dir -r requirements.txt
+
+COPY app.py ./
+
+EXPOSE 5000
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
