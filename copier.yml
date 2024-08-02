@@ -2,8 +2,17 @@ service_name:
     type: str
     help: What is your service name?
     default: backend
+  
+service_title:
+    type: str
+    help: Title of your project
+
+short_description:
+    type: str
+    help: A short description of the project
 
 _exclude:
   - copier.yaml
   - __pycache__
   - .git
+  - README.md
