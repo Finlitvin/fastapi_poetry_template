@@ -26,6 +26,10 @@ build: ## build app image (use with sudo)
 run: ## run app container (use with sudo)
 	docker run -d -p $(port):$(port) --name {{service_name}} {{service_name}}
 
+.PHONY: stop
+stop: ## stop docker container (use with sudo)
+	docker stop {{service_name}}
+
 .PHONY: init
 init: ## init env and install dependencies
 	pyenv install {{python_version}} || true
