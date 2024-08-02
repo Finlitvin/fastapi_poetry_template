@@ -11,7 +11,7 @@ class AppSettings(BaseAppSettings):
     openapi_url: str = "/openapi.json"
     redoc_url: str = "/redoc"
     title: str = "{{service_name}}"
-    version: str = {{service_version}}
+    version: str = "{{service_version}}"
 
     api_prefix: str = "/api"
     secret_key: SecretStr
