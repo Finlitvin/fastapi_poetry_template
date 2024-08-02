@@ -2,17 +2,22 @@ host ?= 0.0.0.0
 port ?= 8000
 lint-dir ?= .
 
+.PHONY: lint
 lint:
 	ruff check $(lint-dir) --fix ; ruff format $(lint-dir)
 
+.PHONY: test
 test:
 	pytest .
 
+.PHONY: serve
 serve:
 	uvicorn app:app --host $(host) --port $(port) --reload
 
+.PHONY: build
 build:
-	docker build . --tag test_backend
+	docker build . --tag {{serive_name}}
 
+.PHONY: run
 run:
-	docker run -d -p $(port):$(port) --name test_backend test_backend
+	docker run -d -p $(port):$(port) --name {{serive_name}} {{serive_name}}

@@ -1,7 +1,7 @@
-project_name:
+service_name:
     type: str
-    help: What is your project name?
-    default: app
+    help: What is your service name?
+    default: backend
 
 _exclude:
   - copier.yaml

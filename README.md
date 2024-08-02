@@ -2,3 +2,4 @@
 - pyenv
 - poetry
 - make
+- ruff
