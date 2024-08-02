@@ -5,6 +5,7 @@
 - ruff
 
 ```
+install make
 install pyenv
 install poetry
 

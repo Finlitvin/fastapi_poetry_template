@@ -19,11 +19,11 @@ serve: ## run app with Uvicorn
 	uvicorn app:app --host $(host) --port $(port) --reload
 
 .PHONY: build
-build: ## build app image
+build: ## build app image (use with sudo)
 	docker build . --tag {{service_name}}
 
 .PHONY: run
-run: ## run app container
+run: ## run app container (use with sudo)
 	docker run -d -p $(port):$(port) --name {{service_name}} {{service_name}}
 
 .PHONY: init
