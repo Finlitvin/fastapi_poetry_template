@@ -28,7 +28,7 @@ run: ## run app container
 
 .PHONY: init
 init: ## init env and install dependencies
-	pyenv install {{python_version}}
+	pyenv install {{python_version}} || true
 	pyenv local {{python_version}}
 	poetry install
 	poetry shell
