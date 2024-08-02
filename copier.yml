@@ -1,7 +1,12 @@
 service_name:
     type: str
     help: What is your service name?
-  
+
+python_version:
+    type: str
+    help: Python version
+    default: 3.12.4
+
 service_title:
     type: str
     help: Title of your project
