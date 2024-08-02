@@ -12,7 +12,7 @@ short_description:
     help: A short description of the project
 
 _exclude:
-  - copier.yaml
+  - copier.yml
   - __pycache__
   - .git
   - README.md

@@ -16,8 +16,8 @@ serve:
 
 .PHONY: build
 build:
-	docker build . --tag {{serive_name}}
+	docker build . --tag {{service_name}}
 
 .PHONY: run
 run:
-	docker run -d -p $(port):$(port) --name {{serive_name}} {{serive_name}}
+	docker run -d -p $(port):$(port) --name {{service_name}} {{service_name}}
