@@ -1,5 +1,5 @@
-FROM python:3.12.4-slim-bullseye
+FROM python:{{python_version}}-slim-bullseye
 
-LABEL maintainer="Finlitvin"
+LABEL maintainer={{service_author}}
 LABEL description={{service_title}}
-LABEL version="v0.0.1"
+LABEL version={{service_version}}

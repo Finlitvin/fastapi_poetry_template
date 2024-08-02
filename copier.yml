@@ -7,9 +7,19 @@ python_version:
     help: Python version
     default: 3.12.4
 
+service_version:
+    type: str
+    help: Service version
+    default: 0.0.1
+
 service_title:
     type: str
     help: Title of your project
+
+service_author:
+    type: str
+    help: Project author
+    default: Finlitvin <ros.litvin@gmail.com>
 
 short_description:
     type: str
