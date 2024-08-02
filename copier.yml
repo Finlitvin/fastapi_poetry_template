@@ -29,4 +29,3 @@ _exclude:
   - copier.yml
   - __pycache__
   - .git
-  - README.md
