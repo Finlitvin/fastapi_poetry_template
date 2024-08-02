@@ -7,6 +7,11 @@ python_version:
     help: Python version
     default: 3.12.4
 
+poetry_version:
+    type: str
+    help: Poetry version (recomended default version)
+    default: 1.8.3
+
 service_version:
     type: str
     help: Service version
