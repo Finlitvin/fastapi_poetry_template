@@ -21,3 +21,8 @@ build:
 .PHONY: run
 run:
 	docker run -d -p $(port):$(port) --name {{service_name}} {{service_name}}
+
+.PHONY: init
+init:
+	pyenv local {{python_version}}
+	poetry install
