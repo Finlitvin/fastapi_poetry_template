@@ -2,28 +2,32 @@ host ?= 0.0.0.0
 port ?= 8000
 lint-dir ?= .
 
+.PHONY: help
+help: ## Generates a help README
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
 .PHONY: lint
-lint:
+lint: ## lint and format code with Ruff
 	ruff check $(lint-dir) --fix ; ruff format $(lint-dir)
 
 .PHONY: test
-test:
+test: ## run tests with Pytest
 	pytest .
 
 .PHONY: serve
-serve:
+serve: ## run app with Uvicorn
 	uvicorn app:app --host $(host) --port $(port) --reload
 
 .PHONY: build
-build:
+build: ## build app image
 	docker build . --tag {{service_name}}
 
 .PHONY: run
-run:
+run: ## run app container
 	docker run -d -p $(port):$(port) --name {{service_name}} {{service_name}}
 
 .PHONY: init
-init:
+init: ## init env and install dependencies
 	pyenv local {{python_version}}
 	poetry install
 	poetry shell
