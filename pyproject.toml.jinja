@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "{{service_name}}"
 version = "{{service_version}}"
-description = "{{short_description}}"
+description = "{{service_description}}"
 authors = ["{{service_author}}"]
 readme = "README.md"
 package-mode = false
@@ -17,5 +17,5 @@ pytest = "^8.3.2"
 ruff = "^0.5.5"
 
 [build-system]
-requires = ["poetry-core>={{poetry_version}}"]
+requires = ["poetry-core>=1.8.3"]
 build-backend = "poetry.core.masonry.api"

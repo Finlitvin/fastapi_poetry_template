@@ -1,5 +1,10 @@
 README.md
+.gitignore
+.venv
+.python-version
 Dockerfile
 docker-compose.yml
-.venv
+Makefile
+ruff.toml
+_copier_conf.answers_file
 **/*.pyc

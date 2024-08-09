@@ -1,7 +1,7 @@
 FROM python:{{python_version}}-slim-bullseye
 
 LABEL maintainer="{{service_author}}"
-LABEL description="{{service_title}}"
+LABEL description="{{service_description}}"
 LABEL version="{{service_version}}"
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -15,7 +15,7 @@ WORKDIR $APP_PATH
 
 COPY poetry.lock pyproject.toml $APP_PATH
 
-RUN python -m pip install --no-cache-dir poetry=={{poetry_version}}
+RUN python -m pip install --no-cache-dir poetry==1.8.3
 RUN poetry export --without-hashes --without dev -f requirements.txt -o requirements.txt
 
 RUN python -m pip install --no-cache-dir -r requirements.txt

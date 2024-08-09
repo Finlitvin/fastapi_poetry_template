@@ -1,35 +1,25 @@
-service_name:
-    type: str
-    help: What is your service name?
-
 python_version:
     type: str
     help: Python version
     default: 3.12.4
 
-poetry_version:
+service_name:
     type: str
-    help: Poetry version (recomended default version)
-    default: 1.8.3
+    help: Service name?
 
 service_version:
     type: str
-    help: Service version
+    help: Service version?
     default: 0.0.1
-
-service_title:
-    type: str
-    help: Title of your project
-    default: "{{service_name}}"
 
 service_author:
     type: str
-    help: Project author
+    help: Project author?
     default: Finlitvin <ros.litvin@gmail.com>
 
-short_description:
+service_description:
     type: str
-    help: A short description of the project
+    help: Service description?
     default: "{{service_name}}"
 
 _exclude:
