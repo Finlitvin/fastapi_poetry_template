@@ -1,10 +1,22 @@
-README.md
 .gitignore
 .venv
+README.md
+Makefile
+
+# Python
 .python-version
+**/*.pyc
+
+# Docker
 Dockerfile
 docker-compose.yml
-Makefile
-ruff.toml
+
+# MacOS
+.DS_Store
+
+# Copier
 _copier_conf.answers_file
-**/*.pyc
+
+# Ruff
+ruff.toml
+.ruff_cache
